@@ -1,0 +1,82 @@
+###
+GET http://localhost:5000/api/rooms
+###
+POST http://localhost:5000/api/rooms
+Content-Type: application/json
+
+{
+    "name": "walter white",
+    "price":500,
+    "desc":"some description",
+    "roomNumbers": [{
+        "number":102, 
+        "unavailableDates":["2026-01-24", "2026-01-26"]
+    }]
+}
+
+# get single room
+###
+GET http://localhost:5000/api/rooms/6903add7f635a74a62100d9b
+
+
+# update single room
+###
+PUT http://localhost:5000/api/rooms/6903add7f635a74a62100d9b
+Content-Type: application/json 
+
+{
+    "name": "superman",
+    "price":1000,
+    "desc":"some description",
+    "roomNumbers": [{
+        "number":102, 
+        "unavailableDates":["2026-01-24", "2026-01-26"]
+    }]
+}
+
+# delete single room
+###
+DELETE http://localhost:5000/api/rooms/6903add7f635a74a62100d9q
+
+
+
+# get bookings
+###
+GET http://localhost:5000/api/bookings
+
+
+
+# get Single booking
+###
+GET http://localhost:5000/api/bookings/6904d8a1c99e86911ee277c3
+
+###
+# create booking
+POST http://localhost:5000/api/bookings
+Content-Type: application/json
+
+{
+   "roomId": "6903addef635a74a62100d9e",
+   "name": "test",
+   "email": "test@example.com",
+   "checkInDate":"2026-06-12",
+   "checkOutDate":"2026-06-13"
+}
+
+
+# update booking
+###
+PUT http://localhost:5000/api/bookings/6904d8a1c99e86911ee277c3
+Content-Type: application/json
+
+{
+   "name": "Batman & Robin",
+   "email": "batrob@example.com"
+}
+
+
+# delete booking
+###
+DELETE http://localhost:5000/api/bookings/6904ebfadaf4ff8f6eed8555
+
+
