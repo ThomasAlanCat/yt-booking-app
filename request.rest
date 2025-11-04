@@ -1,11 +1,14 @@
+# get all rooms
 ###
 GET http://localhost:5000/api/rooms
+
+# create room
 ###
 POST http://localhost:5000/api/rooms
 Content-Type: application/json
 
 {
-    "name": "walter white",
+    "name": "test room two",
     "price":500,
     "desc":"some description",
     "roomNumbers": [{
@@ -80,3 +83,38 @@ Content-Type: application/json
 DELETE http://localhost:5000/api/bookings/6904ebfadaf4ff8f6eed8555
 
 
+# get all users
+###
+GET http://localhost:5000/api/users
+
+
+# create user
+###
+POST http://localhost:5000/api/users
+Content-Type: application/json
+
+{
+    "name": "anna",
+    "email":"anna@gmail.com",
+    "password":"password"
+}
+
+# login user
+###
+POST http://localhost:5000/api/users/login
+Content-Type: application/json
+
+{
+    "email": "peter@gmail.com",
+    "password": "password"
+}
+
+
+# logout user
+###
+GET http://localhost:5000/api/users/logout
+
+
+#check auth
+###
+GET http://localhost:5000/auth

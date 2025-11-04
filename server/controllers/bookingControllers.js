@@ -1,6 +1,7 @@
 const Booking = require("../models/bookingModel");
 
 const getBookings = async (req, res, next) => {
+  console.log("Request received");
   try {
     const bookings = await Booking.find();
     if (!bookings) {
