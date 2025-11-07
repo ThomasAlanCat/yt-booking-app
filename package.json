@@ -3,12 +3,13 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "server": "nodemon server/server.js"
+    "server": "nodemon server/server.js",
+    "admin": "npm run start --prefix admin",
+    "dev": "concurrently \"npm run server\" \"npm run admin\""
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
   "dependencies": {
     "bcryptjs": "^3.0.2",
     "cookie-parser": "^1.4.7",
@@ -16,5 +17,9 @@
     "express": "^5.1.0",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.19.2"
-  }
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  },
+  "description": ""
 }

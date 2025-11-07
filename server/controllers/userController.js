@@ -35,7 +35,6 @@ const createUser = async (req, res, next) => {
     }
 
     // hash password before saving to database
-
     const { password: userPassword, ...otherDetails } = user._doc;
 
     return res.status(201).json(otherDetails);
