@@ -2,6 +2,8 @@
 ###
 GET http://localhost:5000/api/rooms
 
+
+
 # create room
 ###
 POST http://localhost:5000/api/rooms
@@ -19,7 +21,8 @@ Content-Type: application/json
 
 # get single room
 ###
-GET http://localhost:5000/api/rooms/6903add7f635a74a62100d9b
+GET http://localhost:5000/api/rooms/69104575f2242cd0c02fc858
+
 
 
 # update single room
@@ -37,9 +40,12 @@ Content-Type: application/json
     }]
 }
 
+
+
 # delete single room
 ###
 DELETE http://localhost:5000/api/rooms/6903add7f635a74a62100d9q
+
 
 
 
@@ -53,8 +59,10 @@ GET http://localhost:5000/api/bookings
 ###
 GET http://localhost:5000/api/bookings/6904d8a1c99e86911ee277c3
 
-###
+
+
 # create booking
+###
 POST http://localhost:5000/api/bookings
 Content-Type: application/json
 

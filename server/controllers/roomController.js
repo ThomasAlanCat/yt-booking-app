@@ -26,7 +26,8 @@ const createRoom = async (req, res, next) => {
       res.status(400);
       throw new Error("there was a problem creating room");
     }
-    return res.status(201).json(room);
+    const rooms = await Room.find();
+    return res.status(201).json(rooms);
   } catch (error) {
     next(error);
   }
@@ -56,12 +57,12 @@ const updateRoom = async (req, res, next) => {
       {
         $set: req.body,
       },
-      { new: true }
+      { new: true, runValidators: true }
     );
 
     if (!updatedRoom) {
-      res.status(400);
-      throw new Error("cannot update room");
+      res.status(404);
+      throw new Error(`Room with ID ${req.params.id} not found.`);
     }
 
     return res.status(200).json(updatedRoom);
