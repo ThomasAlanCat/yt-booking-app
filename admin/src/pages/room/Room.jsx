@@ -4,11 +4,13 @@ import { useParams, Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteRoom, reset } from "../../features/room/roomSlice";
 
+import Carousel from "../../component/carousel/Carousel";
+
 const Room = () => {
   const { user } = useSelector((state) => state.auth);
   const { isSuccess } = useSelector((state) => state.room);
 
-  console.log("xxx", user.isAdmin);
+  // console.log("isAdmin", user.isAdmin);
   const { id } = useParams();
 
   const dispatch = useDispatch();
@@ -52,7 +54,8 @@ const Room = () => {
         {room ? (
           <div>
             <div className="img-wrapper">
-              <img src={room.img[0]} alt="room img" />
+              <Carousel data={room.img} />
+              {/* <img src={room.img[0]} alt="room img" /> */}
             </div>
             <h1 className="heading center">{room.name}</h1>
 
