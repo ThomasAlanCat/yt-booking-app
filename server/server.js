@@ -30,7 +30,7 @@ if (process.env.NODE_ENV === "production") {
   const filePath = path.resolve(__dirname, ".", "build", "index.html");
   app.use(express.static(publicPath));
 
-  app.get("*", (req, res) => {
+  app.get("{*any}", (req, res) => {
     return res.sendFile(filePath);
   });
 }
