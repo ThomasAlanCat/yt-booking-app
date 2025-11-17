@@ -1,0 +1,143 @@
+/* =========================================================
+   1. Global Table Styles
+   ========================================================= */
+.table-container {
+  overflow-x: auto; /* Ensures horizontal scrolling for large tables on small screens */
+  width: 100%;
+  padding: 20px;
+}
+
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+/* =========================================================
+   2. Header Styles
+   ========================================================= */
+.user-table thead tr {
+  background-color: #3f51b5; /* Primary color */
+  color: white;
+  border-bottom: 3px solid #303f9f;
+}
+
+.user-table th {
+  padding: 15px 12px;
+  text-align: left;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* =========================================================
+   3. Body (Row & Cell) Styles
+   ========================================================= */
+.user-table tr:nth-child(even) {
+  background-color: #f7f7f7;
+}
+
+.user-table tbody tr:hover {
+  background-color: #e8eaf6; /* Lighter hover color */
+}
+
+.user-table td {
+  padding: 12px;
+  border-bottom: 1px solid #e0e0e0;
+  color: #333;
+  //   vertical-align: middle;
+}
+
+/* =========================================================
+   4. Action Button Styles
+   ========================================================= */
+.user-table button {
+  // background-color: #00bcd4;
+  color: rgb(30, 29, 29);
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  font-weight: 500;
+  //   margin-right: 1rem;
+}
+
+.user-table button:hover {
+  background-color: #0097a7;
+  color: white;
+}
+
+.user-table .view-btn:hover {
+  color: #00bcd4;
+}
+
+/* =========================================================
+   5. Mobile/Responsive Styles (Table-to-Cards)
+   ========================================================= */
+
+@media screen and (max-width: 768px) {
+  .user-table {
+    border: 0; /* Remove outer border in card view */
+  }
+
+  /* Hide table headers on small screens */
+  .user-table thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+
+  .user-table tr {
+    display: block; /* Makes each row act like a card */
+    margin-bottom: 1em;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    background-color: #fff;
+  }
+
+  .user-table tr:nth-child(even) {
+    background-color: #fff; /* Reset striped background for card view */
+  }
+
+  .user-table td {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    text-align: right; /* Align the data to the right */
+    font-size: 0.9em;
+    padding: 8px 12px;
+    position: relative;
+  }
+
+  /* Use the 'data-label' attribute to display the header name as a label */
+  .user-table td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #555;
+    margin-right: 1em;
+  }
+
+  /* Style the button specifically for mobile to ensure it's centered/full width */
+  .user-table td:last-child {
+    border-bottom: 0;
+    text-align: center;
+    padding-top: 15px;
+  }
+
+  .user-table td:last-child button {
+    width: 100%;
+    max-width: 200px;
+    margin: 0 auto;
+    display: block;
+  }
+}

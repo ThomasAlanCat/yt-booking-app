@@ -10,12 +10,13 @@ POST http://localhost:5000/api/rooms
 Content-Type: application/json
 
 {
-    "name": "test room two",
-    "price":500,
-    "desc":"some description",
+    "name": "The Celestial Loft",
+    "price":1399,
+    "desc":"Escape to The Celestial Loft, a truly unique and breathtaking penthouse suite designed for stargazers, dreamers, and those seeking ultimate tranquility. This expansive, split-level haven combines cutting-edge smart technology with ethereal, custom-designed decor inspired by the cosmos. With panoramic city views and a private, retractable glass roof, you'll feel like you're sleeping under a million stars. Perfect for romantic getaways, milestone celebrations, or a luxurious solo retreat.",
+    "img": ["https://res.cloudinary.com/dbarxw4q8/image/upload/v1763021883/olcly5e5ulyxkfa2wyem.jpg","https://res.cloudinary.com/dbarxw4q8/image/upload/v1763021879/jtqo5zkdczbm24fvuswv.jpg","https://res.cloudinary.com/dbarxw4q8/image/upload/v1763021886/k5nrd9yhwgojegccckxc.jpg"  ],
     "roomNumbers": [{
-        "number":102, 
-        "unavailableDates":["2026-01-24", "2026-01-26"]
+        "number":499, 
+        "unavailableDates":["2026-01-19", "2026-01-20"]
     }]
 }
 
@@ -68,8 +69,8 @@ Content-Type: application/json
 
 {
    "roomId": "6903addef635a74a62100d9e",
-   "name": "test",
-   "email": "test@example.com",
+   "name": "nesta",
+   "email": "nesta@example.com",
    "checkInDate":"2026-06-12",
    "checkOutDate":"2026-06-13"
 }
@@ -104,7 +105,8 @@ Content-Type: application/json
 {
     "name": "anna",
     "email":"anna@gmail.com",
-    "password":"password"
+    "password":"password",
+    "isAdmin":true
 }
 
 # login user
@@ -113,7 +115,7 @@ POST http://localhost:5000/api/users/login
 Content-Type: application/json
 
 {
-    "email": "peter@gmail.com",
+    "email": "anna@gmail.com",
     "password": "password"
 }
 

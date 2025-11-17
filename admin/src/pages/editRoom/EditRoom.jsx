@@ -112,11 +112,11 @@ const EditRoom = () => {
           </div>
 
           <div className="input-group">
-            <label htmlFor="price">Room Numbers</label>
+            <label htmlFor="roomNumbers">Room Numbers</label>
             <textarea
               onChange={handleChange}
               value={roomNumbers}
-              name="price"
+              name="roomNumbers"
               placeholder="Enter room numbers seperated by commas eg: 202, 203, 204, 400"
             />
           </div>

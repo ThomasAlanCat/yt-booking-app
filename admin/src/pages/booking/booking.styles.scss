@@ -1,0 +1,35 @@
+#booking {
+  .content-wrapper {
+    width: 540px;
+    max-width: 90%;
+    margin: 0 auto;
+    text-align: center;
+  }
+  p {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+  }
+
+  .cta-wrapper {
+    button {
+      border-radius: 8px;
+      outline: none;
+      border: none;
+      cursor: pointer;
+      margin-right: 1rem;
+      padding: 1rem 2rem;
+      background-color: rgb(30, 29, 29);
+      color: white;
+      transition: all 0.2s linear;
+      &.danger {
+        background-color: orangered;
+      }
+    }
+    button:hover {
+      background-color: rgb(152, 152, 152);
+    }
+    button.danger:hover {
+      background-color: rgb(219, 17, 17);
+    }
+  }
+}

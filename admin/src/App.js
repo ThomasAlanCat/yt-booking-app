@@ -6,9 +6,10 @@ import Register from "./pages/register/Register";
 import Header from "../src/component/header/Header";
 import Dashboard from "./pages/dashboard/Dashboard";
 import CreateRoom from "./pages/CreateRoom";
-import Rooms from "./pages/Rooms/Rooms";
+import Rooms from "./pages/rooms/Rooms";
 import Room from "./pages/room/Room";
 import EditRoom from "./pages/editRoom/EditRoom";
+import Booking from "./pages/booking/Booking";
 
 const App = () => {
   return (
@@ -24,6 +25,7 @@ const App = () => {
           <Route path="/rooms/create" element={<CreateRoom />} />
           <Route path="/rooms/all/:id" element={<Room />} />
           <Route path="/rooms/edit/:id" element={<EditRoom />} />
+          <Route path="/bookings/:id" element={<Booking />} />
         </Routes>
       </Router>
     </>
